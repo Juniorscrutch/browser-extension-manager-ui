@@ -1,0 +1,51 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 10px;
+  width: 200px;
+}
+#container {
+  display: grid;
+  gap: 10px;
+  border: 3px solid red;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+body {
+  background-color: #fefeff;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.header {
+  text-align: center;
+  color: rgb(31, 29, 29);
+  display: flex;
+  padding: 10px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  gap: 10px;
+}
+.filter {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: rgba(46, 42, 42, 0.356);
+}
+.dark-mode-toggle {
+  cursor: pointer;
+  margin-left: 1660px;
+}
+a {
+  text-decoration: none;
+  color: rgb(31, 29, 29);
+}
