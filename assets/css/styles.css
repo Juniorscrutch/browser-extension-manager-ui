@@ -15,33 +15,31 @@
   margin-top: 15px;
 }
 .toggle {
-  width: 40px;
-  height: 20px;
-  background-color: #64748b;
-  border-radius: 20px;
+  width: 42px;
+  height: 22px;
+  background: #64748b;
+  border-radius: 999px;
   position: relative;
   cursor: pointer;
   border: none;
+  display: inline-block;
 }
-.toggle ::after {
+.toggle::after {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   background: #fff;
   border-radius: 50%;
   position: absolute;
   top: 2px;
   left: 2px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 .card.active .toggle {
   background-color: #ef4444;
 }
 .card.active .toggle::after {
-  left: 22px;
-}
-.card.active {
-  background-color: rgb(205, 212, 205);
+  transform: translateX(20px);
 }
 #container {
   display: grid;
@@ -54,16 +52,18 @@
   max-width: 900px;
 }
 body {
-  background-color: #fefeff;
+  background-color: #f1f5f9;
+  color: #0f172a;
 }
 .d-inline-block {
   display: inline-block;
 }
 .header {
-  text-align: center;
-  color: rgb(31, 29, 29);
   display: flex;
-  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 20px;
 }
 .header h1 {
   margin: 0;
@@ -73,15 +73,17 @@ body {
 
 .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background-color: rgba(46, 42, 42, 0.356);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 10px;
 }
 body.dark {
-  background-color: #111;
-  color: #fff;
-  margin-left: 1660px;
+  background-color: #0f172a;
+  color: white;
 }
 .filter {
   display: flex;
@@ -94,12 +96,38 @@ body.dark {
   border-radius: 20px;
   background: #334155;
   text-decoration: none;
-  color: #333;
+  color: white;
   font-weight: 500;
 }
 .filter a.selected {
-  background-color: #f97316;
+  background: #ff0a0a;
+  color: white;
 }
-a.active {
-  background-color: rgb(221, 28, 28);
+body.dark .navbar {
+  background: #f5f6f7;
+}
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.body.dark .card {
+  background: #1e293b;
+  color: white;
+}
+.dark-mode-toggle {
+  cursor: pointer;
+  background: #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+}
+body.dark .dark-mode-toggle {
+  background: #334155;
+}
+.dark-mode-toggle:hover {
+  opacity: 0.8;
 }
