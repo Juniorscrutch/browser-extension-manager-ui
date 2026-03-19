@@ -1,16 +1,57 @@
 .card {
+  background: #1e293b;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
   border: 1px solid #ccc;
-  padding: 16px;
-  margin: 10px;
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+.toggle {
+  width: 40px;
+  height: 20px;
+  background-color: #64748b;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+.toggle ::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+.card.active .toggle {
+  background-color: #ef4444;
+}
+.card.active .toggle::after {
+  left: 22px;
+}
+.card.active {
+  background-color: rgb(205, 212, 205);
 }
 #container {
   display: grid;
-  gap: 10px;
+  gap: 20px;
   border: 3px solid red;
-  justify-content: space-around;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  margin: 40px auto;
+  max-width: 900px;
 }
 body {
   background-color: #fefeff;
@@ -29,11 +70,7 @@ body {
   font-size: 2.5em;
   gap: 10px;
 }
-.filter {
-  margin-left: auto;
-  display: flex;
-  gap: 15px;
-}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -41,11 +78,28 @@ body {
   border-radius: 20px;
   background-color: rgba(46, 42, 42, 0.356);
 }
-.dark-mode-toggle {
-  cursor: pointer;
+body.dark {
+  background-color: #111;
+  color: #fff;
   margin-left: 1660px;
 }
-a {
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.filter a {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #334155;
   text-decoration: none;
-  color: rgb(31, 29, 29);
+  color: #333;
+  font-weight: 500;
+}
+.filter a.selected {
+  background-color: #f97316;
+}
+a.active {
+  background-color: rgb(221, 28, 28);
 }
